@@ -1,0 +1,16 @@
+name: taxi-analytics
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - pyarrow
+  - pyspark
+  - jupyterlab
+  - matplotlib
+  - plotly
+  - scikit-learn
+  - pip
+  - pip:
+      - duckdb
