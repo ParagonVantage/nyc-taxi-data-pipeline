@@ -6,7 +6,7 @@ dependencies:
   - pandas
   - numpy
   - pyarrow
-  - pyspark
+  - pyspark=4.0.1
   - jupyterlab
   - matplotlib
   - plotly
