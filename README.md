@@ -19,6 +19,26 @@ Build a reproducible analytics pipeline (Pandas → Parquet → PySpark) that cl
 ## Status
 - Built marts in Pandas and reproduced them in PySpark local mode
 - Resolved Windows Spark native dependency (Hadoop winutils + DLL), enabling Parquet reads
+## Dashboard Snapshots
+
+### Streamlit App1
+![Streamlit Dashboard](dashboards/streamlit_app.png)
+
+### Streamlit App2
+![Streamlit Dashboard](dashboards/streamlit_app2.png)
+
+### Trips by Hour
+![Trips by Hour](dashboards/trips_by_hour.png)
+
+### Trips by Day of Week
+![Trips by Day of Week](dashboards/trips_by_dow.png)
+
+### Top Pickup Zones
+![Top Pickup Zones](dashboards/top_zones.png)
+
+### Data Quality: Unknown Payment Rate
+![Unknown Payment Rate](dashboards/unknown_payment_rate.png)
+
 ## Repo structure
 - `notebooks/` → EDA, cleaning rules, insights
 - `src/` → reusable scripts (cleaning + Spark pipeline)
