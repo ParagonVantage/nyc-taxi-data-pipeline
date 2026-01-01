@@ -16,7 +16,9 @@ Build a reproducible analytics pipeline (Pandas → Parquet → PySpark) that cl
 3. What are typical trip distance, duration, and fare patterns (and how do they differ by zone)?
 4. What outliers exist (impossible durations/distances/fares), and how many rows do quality rules remove?
 5. What “dashboard-ready” tables best support fast filtering and drill-down?
-
+## Status
+- Built marts in Pandas and reproduced them in PySpark local mode
+- Resolved Windows Spark native dependency (Hadoop winutils + DLL), enabling Parquet reads
 ## Repo structure
 - `notebooks/` → EDA, cleaning rules, insights
 - `src/` → reusable scripts (cleaning + Spark pipeline)
