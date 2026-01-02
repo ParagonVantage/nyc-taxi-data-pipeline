@@ -23,6 +23,10 @@ def main():
         (df["total_amount"] < 0) |
         (df["tip_amount"] < 0)
     )
+    pickup_year = df["tpep_pickup_datetime"].dt.year
+    bad_year = (pickup_year < 2017) | (pickup_year > 2025)
+
+    hard_fail = hard_fail | bad_year
 
     df_clean = df.loc[~hard_fail].copy()
 
