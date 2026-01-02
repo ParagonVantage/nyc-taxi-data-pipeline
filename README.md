@@ -19,6 +19,17 @@ Build a reproducible analytics pipeline (Pandas → Parquet → PySpark) that cl
 ## Status
 - Built marts in Pandas and reproduced them in PySpark local mode
 - Resolved Windows Spark native dependency (Hadoop winutils + DLL), enabling Parquet reads
+  
+## Published tables (Retool-ready)
+
+The pipeline publishes clean, dashboard-ready tables to `data/published/` in both Parquet and CSV:
+
+- `dim_zones` — taxi zone lookup
+- `mart_hour` — trips + averages by hour
+- `mart_dow` — trips + averages by weekday
+- `mart_zone` — demand + revenue metrics by pickup zone
+- `mart_quality_hour` — unknown payment rate by hour
+
 ## Dashboard Snapshots
 
 ### Streamlit App1
