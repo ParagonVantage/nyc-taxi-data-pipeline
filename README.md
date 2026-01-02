@@ -67,6 +67,7 @@ The pipeline publishes clean, dashboard-ready tables to `data/published/` in bot
 - `data/` → local only (ignored by git)
 
 ## How to run
+
 ```bash
 conda activate taxi-analytics
 python src/download_data.py
