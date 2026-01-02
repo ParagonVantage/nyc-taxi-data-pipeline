@@ -19,6 +19,25 @@ Build a reproducible analytics pipeline (Pandas → Parquet → PySpark) that cl
 ## Status
 - Built marts in Pandas and reproduced them in PySpark local mode
 - Resolved Windows Spark native dependency (Hadoop winutils + DLL), enabling Parquet reads
+
+## What this project demonstrates
+- Built a reproducible analytics pipeline (Conda env + scripts + notebooks)
+- Cleaned ~3M NYC taxi trips using transparent hard vs soft quality rules
+- Exported partitioned Parquet for scalable processing
+- Reproduced marts in both Pandas and PySpark (local mode)
+- Built dashboards in Plotly (notebook) and Streamlit (app)
+- Published Retool-ready tables (CSV + Parquet) with a clear data contract
+
+## Published tables (Retool-ready)
+
+The pipeline publishes clean, dashboard-ready tables to `data/published/` in both Parquet and CSV:
+
+- `dim_zones` — taxi zone lookup
+- `mart_hour` — trips + averages by hour
+- `mart_dow` — trips + averages by weekday
+- `mart_zone` — demand + revenue metrics by pickup zone
+- `mart_quality_hour` — unknown payment rate by hour
+
 ## Dashboard Snapshots
 
 ### Streamlit App1
@@ -39,6 +58,7 @@ Build a reproducible analytics pipeline (Pandas → Parquet → PySpark) that cl
 ### Data Quality: Unknown Payment Rate
 ![Unknown Payment Rate](dashboards/unknown_payment_rate.png)
 
+
 ## Repo structure
 - `notebooks/` → EDA, cleaning rules, insights
 - `src/` → reusable scripts (cleaning + Spark pipeline)
@@ -47,7 +67,11 @@ Build a reproducible analytics pipeline (Pandas → Parquet → PySpark) that cl
 - `data/` → local only (ignored by git)
 
 ## How to run
+
 ```bash
-conda env create -f environment.yml
 conda activate taxi-analytics
-jupyter lab
+python src/download_data.py
+python src/export_parquet.py
+python src/spark_mart.py
+python src/publish_marts.py
+streamlit run app.py
