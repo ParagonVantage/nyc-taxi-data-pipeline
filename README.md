@@ -58,6 +58,8 @@ The pipeline publishes clean, dashboard-ready tables to `data/published/` in bot
 ### Data Quality: Unknown Payment Rate
 ![Unknown Payment Rate](dashboards/unknown_payment_rate.png)
 
+## Retool App
+![Retool Dashboard](dashboards/retool_dashboard.png)
 
 ## Repo structure
 - `notebooks/` → EDA, cleaning rules, insights
